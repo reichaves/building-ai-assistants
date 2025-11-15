@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how to build AI assistants for investigative journalism - GIJC25 Workshop by Reinaldo Chaves and Rune Ytreberg">
+    <title>Building an AI Assistant for Investigative Journalists | GIJC25</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">AI for Investigative Journalism</h1>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#concepts">Core Concepts</a></li>
+                <li><a href="#ethics">Ethics</a></li>
+                <li><a href="#prompts">Prompt Engineering</a></li>
+                <li><a href="#platforms">Platforms</a></li>
+                <li><a href="#recipes">Recipes</a></li>
+                <li><a href="#resources">Resources</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="container">
+            <h1>Building an AI Assistant for Investigative Journalists</h1>
+            <p class="subtitle">Global Investigative Journalism Conference 2025</p>
+            <div class="speakers">
+                <p><strong>Presenters:</strong></p>
+                <p>Reinaldo Chaves (Abraji) | Rune Ytreberg (iTromso Datajournalism Lab)</p>
+            </div>
+            <div class="session-info">
+                <p><strong>Session Details:</strong> Sunday, November 23, 2025 | 4:30pm - 5:45pm | KLCC Level 3 - Room 302</p>
+                <a href="https://gijc2025.org/program/schedule/sessions/bae4bc8b5b86698e0cb395043621d698/" target="_blank" class="btn-primary">View Official Session Page</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="concepts" class="section">
+            <div class="container">
+                <h2>What Are AI Agents? Beyond Simple Chatbots</h2>
+                
+                <div class="comparison-grid">
+                    <div class="card">
+                        <div class="icon">💬</div>
+                        <h3>Standard Chatbots</h3>
+                        <ul>
+                            <li>Respond to single questions</li>
+                            <li>Provide one-off answers</li>
+                            <li>Start fresh each conversation</li>
+                            <li>Reactive, not proactive</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon">🤖</div>
+                        <h3>AI Agents</h3>
+                        <ul>
+                            <li>Remember previous interactions</li>
+                            <li>Follow multi-step instructions</li>
+                            <li>Execute complex workflows</li>
+                            <li>Make contextual decisions</li>
+                            <li>Learn from your patterns and preferences</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon">👥</div>
+                        <h3>Your AI Colleague</h3>
+                        <ul>
+                            <li>Acts as a persistent research partner</li>
+                            <li>Maintains project knowledge over time</li>
+                            <li>Adapts to your investigation's needs</li>
+                            <li>Suggests next steps autonomously</li>
+                            <li>Works according to your editorial standards</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="callout">
+                    <p><strong>Think of AI agents as:</strong> A specialized intern who never sleeps, never forgets, and can read thousands of pages in seconds—but always needs your editorial judgment and fact-checking oversight.</p>
+                </div>
+
+                <h3>Why AI Agents Matter for Investigative Journalism</h3>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">⚡</div>
+                        <h4>Speed at Scale</h4>
+                        <p>Process hundreds of documents in minutes instead of months. Identify key passages across massive datasets. Free reporters to focus on actual reporting rather than reading.</p>
+                    </div>
+
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🔍</div>
+                        <h4>Pattern Recognition</h4>
+                        <p>Spot connections humans might miss. Cross-reference names, dates, and entities across disparate sources. Flag inconsistencies and anomalies automatically.</p>
+                    </div>
+
+                    <div class="benefit-card">
+                        <div class="benefit-icon">💡</div>
+                        <h4>Hypothesis Generation</h4>
+                        <p>Suggest investigative angles based on data patterns. Propose follow-up questions. Generate leads for further reporting. Help overcome reporter's block.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ethics" class="section bg-light">
+            <div class="container">
+                <h2>Ethical Guardrails and Limitations</h2>
+                
+                <div class="warning-grid">
+                    <div class="warning-card">
+                        <h3>⚠️ Hallucination Risk</h3>
+                        <p>AI agents can confidently generate false information. They may invent quotes, fabricate sources, or create plausible-sounding but incorrect facts.</p>
+                        <p class="emphasis"><strong>Never publish AI output without verification</strong></p>
+                    </div>
+
+                    <div class="warning-card">
+                        <h3>⚖️ Bias Amplification</h3>
+                        <p>Training data reflects societal biases around race, gender, geography, and ideology. Agents may perpetuate stereotypes or favor certain perspectives.</p>
+                        <p class="emphasis"><strong>Always apply critical editorial judgment</strong></p>
+                    </div>
+
+                    <div class="warning-card">
+                        <h3>🔒 Data Privacy Concerns</h3>
+                        <p>Uploading sensitive documents to AI platforms may expose confidential sources or unpublished information - especially in free tools.</p>
+                        <p class="emphasis"><strong>Understand your platform's data retention and training policies before using</strong></p>
+                    </div>
+
+                    <div class="warning-card">
+                        <h3>🚫 Over-Reliance Danger</h3>
+                        <p>AI can't replace shoe-leather reporting, human source cultivation, or editorial intuition and creativity. Agents are tools to augment investigation, not substitute for it.</p>
+                        <p class="emphasis"><strong>Maintain skepticism and verify everything</strong></p>
+                    </div>
+                </div>
+
+                <div class="ethical-principle">
+                    <h3>Ethical Principle</h3>
+                    <p>Use AI agents to accelerate research and identify leads, but anchor every published claim in verified, human-confirmed evidence. Your byline means you're accountable—not the AI.</p>
+                </div>
+
+                <h3>Pre-Flight Checklist for Tool Safety</h3>
+                <div class="checklist">
+                    <div class="checklist-item">
+                        <h4>1. Who owns my data?</h4>
+                        <p>Have I read the Terms of Service? Does the platform claim any rights to my prompts or uploaded data?</p>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>2. Is my data used for training?</h4>
+                        <p>This is the most critical question. Most free tools use your data to train their models. Is there a clear, explicit toggle to opt-out of data training? Am I using a paid "Pro," "Enterprise," or API-based plan that contractually guarantees my data will not be used for training?</p>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>3. Where is my data stored?</h4>
+                        <p>Is it processed on-device (rare) or on a server? If on a server, in what legal jurisdiction? Is it subject to a government that may target journalists?</p>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>4. What is my verification workflow?</h4>
+                        <p>How will I fact-check every claim, name, and date generated by the AI against the original source documents before using in reporting?</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="use-cases" class="section">
+            <div class="container">
+                <h2>When to Use AI Agents (and When Not To)</h2>
+                
+                <div class="use-cases-grid">
+                    <div class="use-case-card green">
+                        <h3>✓ Best Suited For</h3>
+                        <ul>
+                            <li><strong>Document summarization:</strong> Extracting key points from lengthy court filings, reports, or transcripts</li>
+                            <li><strong>Entity extraction:</strong> Pulling names, organizations, dates from unstructured text</li>
+                            <li><strong>Data normalization:</strong> Standardizing inconsistent formats in datasets</li>
+                            <li><strong>Cross-referencing:</strong> Finding connections across multiple documents</li>
+                            <li><strong>Hypothesis generation:</strong> Brainstorming investigative angles</li>
+                            <li><strong>Template creation:</strong> Drafting FOIA requests, interview guides, or data collection forms</li>
+                            <li><strong>Monitoring:</strong> Setting up alerts for new information on ongoing investigations</li>
+                        </ul>
+                    </div>
+
+                    <div class="use-case-card red">
+                        <h3>⊗ Not Appropriate For</h3>
+                        <ul>
+                            <li><strong>Final fact-checking:</strong> AI cannot verify truth—only humans can</li>
+                            <li><strong>Sensitive source protection:</strong> Never upload confidential whistleblower materials - especially in free tools</li>
+                            <li><strong>Legal analysis:</strong> Requires qualified attorney review, not AI interpretation</li>
+                            <li><strong>Direct quotes:</strong> AI-generated quotes are fabrications, not journalism</li>
+                            <li><strong>Complex statistical analysis:</strong> Use proper data science tools instead</li>
+                            <li><strong>Editorial decision-making:</strong> Human judgment on what to publish and how</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="general-rule">
+                    <p><strong>The general rule:</strong> Use AI agents for research acceleration and pattern identification, but keep humans firmly in control of verification, analysis, and editorial choices.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="prompts" class="section bg-light">
+            <div class="container">
+                <h2>Prompt Engineering for Journalists: Getting Better Results</h2>
+                
+                <p class="intro">Vague prompts yield vague results. A journalistic prompt must be structured like an editorial assignment.</p>
+
+                <div class="prompt-steps">
+                    <div class="step-card">
+                        <div class="step-number">01</div>
+                        <h3>Define the Role</h3>
+                        <p>Start with: "You are an investigative journalism research assistant specializing in [topic]." This sets context and behavioral expectations.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">02</div>
+                        <h3>Specify the Task</h3>
+                        <p>Be explicit: "Summarize this document, highlighting conflicts of interest, financial transactions, and timeline inconsistencies." Vague prompts yield vague results.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">03</div>
+                        <h3>Provide Context</h3>
+                        <p>Share background: "I'm investigating municipal corruption. Focus on relationships between contractors and city officials." Context improves relevance.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">04</div>
+                        <h3>Request Format</h3>
+                        <p>Specify output: "Provide findings as a bulleted list with direct quotes and page numbers." Structured formats are easier to verify and use.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">05</div>
+                        <h3>Demand Citations</h3>
+                        <p>Always add: "Include page numbers and specific quotes for every claim." This makes fact-checking possible and catches hallucinations. If necessary, instruct the model to only consult sources of information that you specify.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">06</div>
+                        <h3>Include Mandatory Rules</h3>
+                        <p>Use instructions such as: "Always cite the sources of information, with links, and do not invent information. Before giving your final answer, critically reflect on your own answer in terms of accuracy, completeness, and logical flow. Revise your answer based on this internal critique."</p>
+                    </div>
+                </div>
+
+                <div class="golden-rule">
+                    <h3>Golden Rule</h3>
+                    <p>Never trust, always verify. Cross-check every AI-generated fact, name, date, and quote against source documents before using in reporting.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="platforms" class="section">
+            <div class="container">
+                <h2>No-Code Platforms: Building Your AI Assistant</h2>
+                
+                <div class="platforms-grid">
+                    <div class="platform-card">
+                        <h3>Google Gemini Gems</h3>
+                        <p><strong>Best for:</strong> Quick custom agents with Google Workspace integration. Upload documents directly. Strong at summarization and entity extraction.</p>
+                        <p><strong>Setup time:</strong> 5-10 minutes per agent</p>
+                        <a href="https://gemini.google.com/" target="_blank" class="btn-secondary">Access Gemini</a>
+                    </div>
+
+                    <div class="platform-card">
+                        <h3>OpenAI Custom GPTs</h3>
+                        <p><strong>Best for:</strong> More sophisticated workflows and longer conversations. Access to GPT-5 reasoning. You can also use the ChatGPT Agent Mode. New Agent Builder offers visual workflow creation, but more complex and requires paid subscription.</p>
+                        <p><strong>Setup time:</strong> 10-20 minutes per agent</p>
+                        <a href="https://chat.openai.com/gpts/editor" target="_blank" class="btn-secondary">Access GPT Builder</a>
+                    </div>
+
+                    <div class="platform-card">
+                        <h3>Alternative Tools</h3>
+                        <p><strong>Options include:</strong></p>
+                        <ul>
+                            <li><a href="https://claude.ai/" target="_blank">Claude Artifacts (Anthropic)</a></li>
+                            <li><a href="https://you.com/" target="_blank">You.com</a></li>
+                            <li><a href="https://manus.im/" target="_blank">Manus</a></li>
+                            <li><a href="https://copilotstudio.microsoft.com" target="_blank">Microsoft Copilot Studio</a></li>
+                            <li><a href="https://zapier.com/mcp" target="_blank">Zapier MCP (Model Context Protocol)</a></li>
+                            <li><a href="https://www.documentcloud.org/" target="_blank">DocumentCloud with AI features</a></li>
+                        </ul>
+                        <p><strong>Consider:</strong> Cost, data privacy policies, integration needs. Generally, all tools have free or trial options. But consider privacy, risk and processing capacity limitations in the free options.</p>
+                    </div>
+                </div>
+
+                <div class="platform-note">
+                    <p>All platforms allow journalists to create specialized agents without writing code. Simply describe your needs in plain language, provide examples, and set behavioral guidelines.</p>
+                    <p><em>Note: HuggingFace had an open-source agent creator—Hugging Chat Assistants. But it was shut down in July and now only has a <a href="https://huggingface.co/chat/" target="_blank">chatbot with several open-source models</a>.</em></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="recipes" class="section bg-light">
+            <div class="container">
+                <h2>Real Investigative Use Cases</h2>
+                
+                <div class="recipes-grid">
+                    <div class="recipe-card">
+                        <div class="recipe-number">1</div>
+                        <h3>Lawsuit Summarization</h3>
+                        <p>"Extract plaintiff allegations, defendant responses, key evidence cited, and timeline of events from this 300-page civil complaint. Include page numbers"</p>
+                    </div>
+
+                    <div class="recipe-card">
+                        <div class="recipe-number">2</div>
+                        <h3>Entity Matrix Building</h3>
+                        <p>"Identify all individuals and organizations mentioned in these board meeting minutes. Create a relationship map showing connections, roles, and financial ties"</p>
+                    </div>
+
+                    <div class="recipe-card">
+                        <div class="recipe-number">3</div>
+                        <h3>FOIA/LAI Request Drafting</h3>
+                        <p>"Generate a public records request for emails and meeting calendars related to [specific project], using legally precise language to avoid rejections"</p>
+                    </div>
+
+                    <div class="recipe-card">
+                        <div class="recipe-number">4</div>
+                        <h3>Company Name Reconciliation</h3>
+                        <p>"Standardize these company names across datasets: identify which variations (LLC, Inc, Corp, misspellings) refer to the same entity"</p>
+                    </div>
+
+                    <div class="recipe-card">
+                        <div class="recipe-number">5</div>
+                        <h3>Dataset Normalization</h3>
+                        <p>"Clean this campaign finance data: standardize date formats, fix address inconsistencies, and flag entries missing required fields"</p>
+                    </div>
+
+                    <div class="recipe-card">
+                        <div class="recipe-number">6</div>
+                        <h3>Interview Guide Creation</h3>
+                        <p>"Based on these documents, generate 15 interview questions for the former CFO, focusing on the 2021 financial irregularities we've identified"</p>
+                    </div>
+
+                    <div class="recipe-card">
+                        <div class="recipe-number">7</div>
+                        <h3>Monitoring Routines</h3>
+                        <p>"Alert me when new court filings appear for [case name] or when these 10 key individuals appear in public records databases"</p>
+                    </div>
+                </div>
+
+                <h3>Three AI Agent Examples</h3>
+                <div class="examples-grid">
+                    <div class="example-card">
+                        <h4>Gemini Gem - Fact-Checking Specialist</h4>
+                        <ul>
+                            <li>Analyzes documents for verification</li>
+                            <li>Creates timelines and identifies contradictions</li>
+                            <li>Generates structured fact-check reports</li>
+                        </ul>
+                    </div>
+
+                    <div class="example-card">
+                        <h4>Custom GPT - OSINT Geolocation Investigator</h4>
+                        <ul>
+                            <li>Extracts photo metadata and analyzes visual clues</li>
+                            <li>Suggests locations with confidence levels</li>
+                            <li>Creates lead sheets for follow-up reporting</li>
+                        </ul>
+                    </div>
+
+                    <div class="example-card">
+                        <h4>ChatGPT Agent - Brazilian Government Monitor</h4>
+                        <ul>
+                            <li>Scans Brazil's official gazette daily</li>
+                            <li>Focuses on no-bid contracts and political connections</li>
+                            <li>Produces investigation-ready reports</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="next-steps" class="section">
+            <div class="container">
+                <h2>Your Next Steps: From Learning to Doing</h2>
+                
+                <div class="steps-grid">
+                    <div class="next-step-card">
+                        <div class="step-icon">1</div>
+                        <h3>Create your first Gem/GPT</h3>
+                        <p>Start with a simple document summarizer. Use a non-sensitive public document for practice.</p>
+                    </div>
+
+                    <div class="next-step-card">
+                        <div class="step-icon">2</div>
+                        <h3>Test with real data</h3>
+                        <p>Upload a sample court filing or public report. Compare AI summary against your manual reading.</p>
+                    </div>
+
+                    <div class="next-step-card">
+                        <div class="step-icon">3</div>
+                        <h3>Refine your prompts</h3>
+                        <p>Adjust instructions based on what worked and what didn't. Save successful prompts as templates.</p>
+                    </div>
+
+                    <div class="next-step-card">
+                        <div class="step-icon">4</div>
+                        <h3>Build an entity extractor</h3>
+                        <p>Create an agent that pulls names, organizations, and dates from text. Verify accuracy carefully.</p>
+                    </div>
+
+                    <div class="next-step-card">
+                        <div class="step-icon">5</div>
+                        <h3>Start small, scale gradually</h3>
+                        <p>Use AI for research acceleration, not as primary source. Build trust through verification.</p>
+                    </div>
+                </div>
+
+                <div class="remember-box">
+                    <h3>Remember</h3>
+                    <p>AI agents are powerful tools for investigative journalism, but they're tools, not replacements for reporters. Your skepticism, editorial judgment, and commitment to verification remain the foundation of trustworthy journalism.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="resources" class="section bg-light">
+            <div class="container">
+                <h2>Resources & Contact</h2>
+                
+                <div class="resources-grid">
+                    <div class="resource-section">
+                        <h3>Speakers & Contact</h3>
+                        <ul>
+                            <li><strong>Reinaldo Chaves (Abraji):</strong> <a href="mailto:reinaldo@abraji.org.br">reinaldo@abraji.org.br</a> | <a href="https://linkedin.com/in/reinaldochaves" target="_blank">LinkedIn</a></li>
+                            <li><strong>Rune Ytreberg (iTromso):</strong> <a href="mailto:rune.ytreberg@itromso.no">rune.ytreberg@itromso.no</a> | <a href="https://no.linkedin.com/in/rune-ytreberg-1751ab3" target="_blank">LinkedIn</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-section">
+                        <h3>Key Projects & Resources</h3>
+                        <ul>
+                            <li><a href="https://www.abraji.org.br/noticias/abraji-lanca-iniciativa-para-estimular-e-aperfeicoaro-uso-de-ia-no-jornalismo" target="_blank">Abraji "Kit de Ferramentas Gemini"</a> - AI guides for journalists in Brazil</li>
+                            <li><a href="https://github.com/JournalismAI/attackdetector" target="_blank">Attack Detector Project</a> - Monitoring hate speech (Abraji/Data Crítica)</li>
+                            <li><a href="https://open.spotify.com/episode/6pZA5DOngLgpKYs7esGqNz" target="_blank">Newsroom Robots Podcast</a> - Episode with Rune Ytreberg</li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-section">
+                        <h3>Brazilian Government APIs</h3>
+                        <ul>
+                            <li><a href="https://www.in.gov.br/leiturajornal" target="_blank">Diário Oficial da União (DOU)</a> - Federal gazette</li>
+                            <li><a href="https://publica.cnpj.ws/cnpj/" target="_blank">Receita Federal</a> - Company lookups</li>
+                            <li><a href="https://dadosabertos.tse.jus.br/" target="_blank">TSE Data</a> - Political background</li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-section">
+                        <h3>Further Reading</h3>
+                        <ul>
+                            <li><a href="https://gijn.org/resource/" target="_blank">GIJN Resource Center</a> - Conference tipsheets</li>
+                            <li><a href="https://www.niemanlab.org/tag/ai/" target="_blank">Nieman Lab (AI in Journalism)</a> - Case studies and analysis</li>
+                            <li><a href="https://www.lse.ac.uk/media-and-communications/polis/JournalismAI" target="_blank">LSE JournalismAI</a> - Research and resources</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 GIJC25 Workshop: Building an AI Assistant for Investigative Journalists</p>
+            <p>Presented by Reinaldo Chaves (Abraji) and Rune Ytreberg (iTromso Datajournalism Lab)</p>
+            <p><a href="https://gijc2025.org/program/schedule/sessions/bae4bc8b5b86698e0cb395043621d698/" target="_blank">Official Session Page</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
