@@ -1,6 +1,6 @@
 # Building an AI Assistant for Investigative Journalists
 
-A comprehensive website resource based on the GIJC25 workshop presented by Reinaldo Chaves (Abraji) and Rune Ytreberg (iTromso Datajournalism Lab).
+A comprehensive website resource based on the GIJC25 workshop presented by Reinaldo Chaves (Abraji).
 
 ## About This Project
 
@@ -185,13 +185,12 @@ And add the corresponding section:
 All content is based on materials from the GIJC25 workshop:
 
 **Primary Sources:**
-- Presentation slides by Reinaldo Chaves and Rune Ytreberg
+- Presentation slides by Reinaldo Chaves
 - Comprehensive tipsheet document
 - Official GIJC25 session page: https://gijc2025.org/program/schedule/sessions/bae4bc8b5b86698e0cb395043621d698/
 
-**Speakers:**
+**Speaker:**
 - Reinaldo Chaves (Abraji): reinaldo@abraji.org.br
-- Rune Ytreberg (iTromso): rune.ytreberg@itromso.no
 
 ## License
 
@@ -236,9 +235,8 @@ If you find errors or want to suggest improvements:
 
 ## Contact
 
-For questions about the content, contact the workshop presenters:
+For questions about the content, contact the workshop presenter:
 - Reinaldo Chaves: reinaldo@abraji.org.br
-- Rune Ytreberg: rune.ytreberg@itromso.no
 
 For technical issues with this website, open an issue on GitHub.
 
